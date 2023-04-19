@@ -18,4 +18,4 @@
 <input type="submit" value="회원 가입">
 </form>
 </body>
-</html>
+</html> <!-- 1234 -->
