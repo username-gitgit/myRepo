@@ -6,17 +6,19 @@
 <meta http-equiv="Content-Type" content="text/html;  charset=UTF-8">
 <head>
 	<title>울산 그린 병원</title>
+<link rel="stylesheet" href="resources/css/mystyle.css">	
 </head>
 <body>
 
+<!-- 헤더에서 넣을 예정 -->
 <!-- 위아래 둘다 / 넣으면 안됨 -->
-<button type="button" onclick="location.href='LogIn'">로그인</button>
-<button type="button" onclick="location.href='SignUp'">회원가입</button>
+<!-- <button type="button" onclick="location.href='LogIn'">로그인</button>
+<button type="button" onclick="location.href='SignUp'">회원가입</button> -->
 
 <h1>
 	증명서 인터넷 발급
 </h1>
-<p>인터넷을 사용하여 언제, 어디서든 증명서를 발급받을 수 있으며,
+<p>인터넷을 사용하여 언제, 어디서든 증명서를 발급받을 수 있으며,<br>
 즉시 줄력 또는 다운로드 가능합니다.</p>
 
 <button type="button" onclick="location.href=#">인터넷 발급 바로 가기</button>
