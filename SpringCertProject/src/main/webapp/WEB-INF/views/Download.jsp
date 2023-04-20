@@ -29,7 +29,7 @@
 <!-- Navigation-->
 <nav class="navbar navbar-expand-lg bg-white">
 	<div class="container px-5">
-		<a class="navbar-brand fs-6 px-3 GreenText-gradient" href="home.jsp"><span
+		<a class="navbar-brand fs-6 px-3 GreenText-gradient" href="home"><span
 			class="fw-bolder">ULSAN GREEN <br>HOSPITAL
 		</span></a>
 		<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -45,10 +45,10 @@
 				<li class="nav-item"><a class="nav-link">진료파트</a></li>
 				<li class="nav-item"><a class="nav-link">나눔소통</a></li>
 				<li class="nav-item"><a class="nav-link">병원안내</a></li>
-				<li class="nav-item"><a href="LogIn.jsp"><button
+				<li class="nav-item"><a href="LogIn"><button
 							class="badge bg-gradient-primary-to-secondary text-white mt-2 mx-2"
 							style="border: none;">로그인</button></a></li>
-				<li class="nav-item"><a href="SignUp.jsp"><button
+				<li class="nav-item"><a href="SignUp"><button
 							class="nav-link badge bg-gradient-primary-to-secondary text-white mt-2 mx-2"
 							style="border: none;">회원가입</button></a></li>
 			</ul>
@@ -85,7 +85,7 @@
 									<td><a
 										class="text-center mx-auto bg-gradient-primary-to-secondary btn btn-primary d-inline-block col-lg-5 
 										fw-bolder fs-5 mt-3 Sans bi bi-download me-2"
-										href="Download.jsp"> 증명서 다운로드 </a></td>
+										href="Download"> 증명서 다운로드 </a></td>
 								</tr>
 							</table>
 						</div>

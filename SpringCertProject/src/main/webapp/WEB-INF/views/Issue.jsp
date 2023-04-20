@@ -31,7 +31,7 @@
 <!-- Navigation-->
 <nav class="navbar navbar-expand-lg bg-white">
 	<div class="container px-5">
-		<a class="navbar-brand fs-6 px-3 GreenText-gradient" href="home.jsp"><span
+		<a class="navbar-brand fs-6 px-3 GreenText-gradient" href="home"><span
 			class="fw-bolder">ULSAN GREEN <br>HOSPITAL
 		</span></a>
 		<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -87,7 +87,7 @@
 									<td><a
 										class="text-center mx-auto bg-gradient-primary-to-secondary btn btn-primary d-inline-block col-lg-5 
 										fw-bolder fs-5 mt-3 Sans bi bi-download me-2"
-										href="Download.jsp"> 증명서 다운로드 </a></td>
+										href="Download"> 증명서 다운로드 </a></td>
 								</tr>
 							</table>
 						</div>
