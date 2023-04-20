@@ -17,8 +17,8 @@
 	
 	<bean id="hikariConfig" class="com.zaxxer.hikari.HikariConfig">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
-		<property name="jdbcUrl" value="jdbc:mysql://localhost:3306/testqset?allowMultiQueries=true"></property>
-		<property name="username" value="root"></property>
+		<property name="jdbcUrl" value="jdbc:mysql://192.168.30.79:3306/ateam?allowMultiQueries=true"></property>
+		<property name="username" value="totoro"></property>
 		<property name="password" value="1234"></property>
 	</bean>
 	<!-- 		?serverTimezone=Asia/Seoul -->

@@ -119,6 +119,13 @@
 		    <artifactId>jackson-dataformat-xml</artifactId>
 		    <version>2.9.6</version>
 		</dependency>
+		
+		<!-- javax.validation 입력값 유효성 검증 -->
+		<dependency>
+			<groupId>javax.validation</groupId>
+			<artifactId>validation-api</artifactId>
+			<version>2.0.1.Final</version>
+		</dependency>
 				
 		<!-- AspectJ -->
 		<dependency>
