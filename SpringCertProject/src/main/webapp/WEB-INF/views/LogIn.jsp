@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<% request.setCharacterEncoding("utf-8"); %>
 <meta charset="UTF-8">
 <title>로그인</title>
 <link rel="stylesheet" href="../resources/css/mystyle.css">
@@ -10,9 +11,9 @@
 <body>
 <h1>회원 로그인</h1>
 <p>이메일과 비밀번호를 입력하시고 로그인해 주세요.</p>
-<form action="LogIn" method="post">
-이메일 <input type="text" name="id"><br>
-비밀번호 <input type="text" name="id"><br>
+<form action="memberIn" method="post">
+이메일 <input type="text" name="email"><br>
+비밀번호 <input type="text" name="password"><br>
 <input type="submit" value="로그인">
 </form>
 </body>

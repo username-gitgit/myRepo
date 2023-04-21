@@ -1,16 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>	
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>       
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<% request.setCharacterEncoding("utf-8"); %>
 <meta charset="utf-8" />
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 <meta name="description" content="" />
 <meta name="author" content="" />
-<title>온라인 증명서 발급</title>
+<title>관리자 페이지</title>
 <!-- Favicon-->
 <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
 <!-- Custom Google font-->
@@ -24,8 +24,8 @@
 	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css"
 	rel="stylesheet" />
 <!-- Core theme CSS (includes Bootstrap)-->
-<link href="css/styles.css" rel="stylesheet" />
-<!--  #경로 수정 필요함 #  -->
+<link href="/resources/css/styles.css" rel="stylesheet" />
+<!-- # 경로 바꿔주기 # -->
 </head>
 
 <!-- Navigation-->
@@ -59,78 +59,100 @@
 </nav>
 <header> </header>
 
-<body> <!--  class="mainBg" -->
-<main>
-	<!-- Page Content-->
-	<div class="container px-5">
+<body>
+	<!--  class="mainBg" -->
+	<main> <!-- Page Content-->
+	<div class="px-5">
 		<div class="text-center mb-5">
 			<h1 class="display-5 fw-bolder mb-0">
-				<span class="text-gradient d-inline">온라인 증명서 발급</span>
+				<span class="text-gradient d-inline fs-2">관리자 페이지</span><br>
 			</h1>
 		</div>
 
+		<div class="row gx-5 justify-content-center">
+			<div class="col-lg-11 col-xl-9 col-xxl-8">
+				<form action="doctorIn" method="post" class="Sans">
+					<table>
+						<tr>
+						<% String email = (String) session.getAttribute("doctor"); %>
+							<td class="pb-2">관리자 계정 : Doctor <%=email%></td>			
+						</tr>
+					</table>
+				</form>
+			</div>
+		</div>
+		<br>
+		<br>
 		<div class="row gx-5 justify-content-center">
 			<div class="col-lg-11 col-xl-9 col-xxl-8">
 				<div class="card shadow border-0 rounded-4 mb-5">
 					<div class="card-body p-5 row align-items-center ">
 						<table class="text-center">
 							<tr>
-								<td><h4 class="DarkText-gradient fw-bolder mb-4">증명서
-										종류</h4></td>
-								<td><h4 class="DarkText-gradient fw-bolder mb-4">증명서
-										발급</h4></td>
+								<td><h4 class="DarkText-gradient fw-bolder mb-4">환자 이름</h4></td>
+								<td><h4 class="DarkText-gradient fw-bolder mb-4">환자 주민번호</h4></td>
+								<td><h4 class="DarkText-gradient fw-bolder mb-4">상병명코드</h4></td>
+								<td><h4 class="DarkText-gradient fw-bolder mb-4">병명</h4></td>
+								<td><h4 class="DarkText-gradient fw-bolder mb-4">수술명</h4></td>
+								<td><h4 class="DarkText-gradient fw-bolder mb-4">입원 날짜</h4></td>
+								<td><h4 class="DarkText-gradient fw-bolder mb-4">퇴원 날짜</h4></td>
 							</tr>
-
+							<c:forEach items="${member}" var="member">
 							<tr>
 								<td>
 									<div
-										class="col text-center mb-4 mb-lg-3 p-2 rounded-4 fw-bolder fs-5 Sans">
-										일반진단서</div>
+										class="col text-center mb-4 mb-lg-3 p-2 rounded-4 fs-5 Sans fw-light">
+										${member.name}</div>
 								</td>
-								<td class="Sans"><a
-									class="bg-gradient-primary-to-secondary btn btn-primary d-inline-block bi bi-download me-2 col-lg-4 mb-2"
-									href="Download"> 신청 </a></td>
-							</tr>
-
-							<tr>
 								<td>
 									<div
-										class="col text-center mb-4 mb-lg-3 p-2 rounded-4 fw-bolder fs-5 Sans">
-										입퇴원확인서</div>
+										class="col text-center mb-4 mb-lg-3 p-2 rounded-4 fs-5 Sans fw-light">
+										${member.residentid}</div>
 								</td>
-								<td class="Sans"><a
-									class="bg-gradient-primary-to-secondary btn btn-primary d-inline-block bi bi-download me-2 col-lg-4 mb-2"
-									href="Download"> 신청 </a></td>
-							</tr>
-
-							<tr>
 								<td>
 									<div
-										class="col text-center mb-4 mb-lg-3 p-2 rounded-4 fw-bolder fs-5 Sans">
-										수술확인서</div>
+										class="col text-center mb-4 mb-lg-3 p-2 rounded-4 fs-5 Sans fw-light">
+										-</div>
 								</td>
-								<td class="Sans"><a
-									class="bg-gradient-primary-to-secondary btn btn-primary d-inline-block bi bi-download me-2 col-lg-4 mb-2"
-									href="Download"> 신청 </a></td>
+								<td>
+									<div
+										class="col text-center mb-4 mb-lg-3 p-2 rounded-4 fs-5 Sans fw-light">
+										-</div>
+								</td>
+								<td>
+									<div
+										class="col text-center mb-4 mb-lg-3 p-2 rounded-4 fs-5 Sans fw-light">
+										-</div>
+								</td>
+								<td>
+									<div
+										class="col text-center mb-4 mb-lg-3 p-2 rounded-4 fs-5 Sans fw-light">
+										-</div>
+								</td>
+								<td>
+									<div
+										class="col text-center mb-4 mb-lg-3 p-2 rounded-4 fs-5 Sans fw-light">
+										-</div>
+								</td>
+								<td>
+									<div
+										class="col text-center mb-4 mb-lg-3 p-2 rounded-4 fs-5 Sans fw-light">
+										<a href="memModify?email=${member.email}">작성</a></div>
+								</td>
 							</tr>
-
-							<tr>
-								<td colspan=2 class="Sans"><a
-									class="bg-gradient-primary-to-secondary btn btn-primary d-inline-block col-lg-3 fw-bolder fs-5 mt-3"
-									href="Download"> 결제하기 </a></td>
-							</tr>
+							</c:forEach>
 						</table>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-</main>
+	</main>
 
-<!-- Bootstrap core JS-->
-<script
-	src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-<!-- Core theme JS-->
-<script src="js/scripts.js"></script>
+	<!-- Bootstrap core JS-->
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+	<!-- Core theme JS-->
+<!-- 	<script src="resources/js/scripts.js"></script> -->
 </body>
 </html>
