@@ -13,30 +13,265 @@
 
 /* 새로 추가함 */
 @import
-	url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR&family=Roboto&display=swap')
-	; /*font-family: 'IBM Plex Sans KR', sans-serif;*/
-/*  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap'); font-family: 'Montserrat', sans-serif;
- */
+	url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR&family=Roboto&display=swap'); /*font-family: 'IBM Plex Sans KR', sans-serif;*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap'); /*font-family: 'Montserrat', sans-serif;*/
+ 
 .Sans {
 	font-family: 'IBM Plex Sans KR', sans-serif;
 }
 
-/*  .Mont{
+.Mont{
  font-family: 'Montserrat', sans-serif;
- } */
+ } 
+
 header {
-	height: 80px;
+	height: 100px;
 	width: 100%;
 	background: linear-gradient(180deg, #EBF3FE, white);
 }
 
-.mainBg {
-	background-image: url("../assets/main.jpg"); /* #경로 수정 필요함 # */
+/* input Style */
+/* .inputStyle{
+background-color: #fafafa !important;
+box-shadow: inset 0 1px 3px 0 rgba(0,0,0,.08);
+} */
+
+/* Diagnosis.jsp 진단 테이블 칼럼 너비 조정 */
+.DiagnosisTable{
+	table-layout:auto;
+	white-space: nowrap;
+}
+/* .DiagnosisTable tr:nth-child(1) td:nth-child(2),
+.DiagnosisTable tr:nth-child(1) td:nth-child(4),
+.DiagnosisTable tr:nth-child(3) td:nth-child(2),
+.DiagnosisTable tr:nth-child(3) td:nth-child(4),
+.DiagnosisTable tr:nth-child(4) td:nth-child(2),
+.DiagnosisTable tr:nth-child(4) td:nth-child(4) {
+	table-layout:auto;
+   width: 40%;
+   margin:0;
+   padding:0;
+} */
+
+/* home.jsp 배경 화면 */
+.BgImage {
+	background-image: url("../images/mainBlur.png"); 
 	background-size: cover;
-	background-attachment: fixed;
-	position: fixed-bottom;
+ 	background-attachment: fixed; 
+ 	background-position: center center;
+/* 	position: fixed-bottom; */
 }
 
+.badge:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+/* 로고 효과  */
+.LogoGradient-text {
+  background: -webkit-linear-gradient(45deg, #56C573, #229CE7, #55CA88, #412fe7); /* 초록, 청록, 초록, 보라 */
+/*   background: -webkit-linear-gradient(45deg, #412fe7, #55CA88, #92CBFA, #412fe7);  *//*보라, 초록, 하늘, 보라 */
+  background-size: 400%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient 7s ease infinite; /*15s*/
+  text-align: center;
+  font-size: 4rem;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .LogoGradient-text {
+    font-size: 3rem;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .LogoGradient-text {
+    font-size: 6rem;
+  }
+}
+
+/* btn-1 버튼 효과 */
+/* .btn-1 {
+  background: rgb(6,14,131);
+  background: linear-gradient(0deg, rgba(6,14,131,1) 0%, rgba(12,25,180,1) 100%);
+  border: none;
+} */
+
+.btn-1:hover {
+   background: rgb(0,3,255);
+background: linear-gradient(135deg, #412fe7 0%,  #6610f2 100%);
+border:1px solid #6610f2 !important;
+}
+
+canvas {
+  display: block;
+  margin: 0;
+}
+
+/* Internet Issue 버튼 효과 */
+.InternetIssue a {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  color: white; /* #03e9f4; */
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: .5s;
+  margin-top: 40px;
+  letter-spacing: 4px
+}
+
+.InternetIssue a:hover {
+  background: linear-gradient(135deg, #412fe7 0%,  #6610f2 100%); /* #03e9f4; */
+  color: #fff;
+  border-radius: 0.5rem;
+ /*  box-shadow: 0 0 5px #03e9f4,
+              0 0 25px #03e9f4,
+              0 0 50px #03e9f4,
+              0 0 100px #03e9f4; */
+}
+
+.InternetIssue a span {
+  position: absolute;
+  display: block;
+}
+
+.InternetIssue a span:nth-child(1) {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent,#DAFA9C); /* #03e9f4 */
+  animation: btn-anim1 1s linear infinite;
+}
+
+@keyframes btn-anim1 {
+  0% {
+    left: -100%;
+  }
+  50%,100% {
+    left: 100%;
+  }
+}
+
+.InternetIssue a span:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, #DAFA9C); /*#03e9f4*/
+  animation: btn-anim2 1s linear infinite;
+  animation-delay: .25s
+}
+
+@keyframes btn-anim2 {
+  0% {
+    top: -100%;
+  }
+  50%,100% {
+    top: 100%;
+  }
+}
+
+.InternetIssue a span:nth-child(3) {
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg, transparent, #eee); /* #03e9f4 */
+  animation: btn-anim3 1s linear infinite;
+  animation-delay: .5s
+}
+
+@keyframes btn-anim3 {
+  0% {
+    right: -100%;
+  }
+  50%,100% {
+    right: 100%;
+  }
+}
+
+.InternetIssue a span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg, transparent,  #eee);/* #03e9f4 */
+  animation: btn-anim4 1s linear infinite;
+  animation-delay: .75s
+}
+
+@keyframes btn-anim4 {
+  0% {
+    bottom: -100%;
+  }
+  50%,100% {
+    bottom: 100%;
+  }
+}
+
+/* 반응형 디자인 */
+/* @media (max-width: 575.98px) {
+  .table-responsive-sm {
+  font-size: 0.5rem;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+@media (max-width: 767.98px) {
+  .table-responsive-md {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+@media (max-width: 991.98px) {
+  .table-responsive-lg {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+@media (max-width: 1199.98px) {
+  .table-responsive-xl {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+@media (max-width: 1399.98px) {
+  .table-responsive-xxl {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+} */
+
+/* @media screen and (max-width: 768px) {
+  reduce font size of table cells
+  .table-responsive td {
+    font-size: 14px;
+  }
+
+  enable horizontal scrolling for small screens
+  .table-responsive {
+    overflow-x: auto;
+  }
+} */
+
+/* 원본 css 코드 */
 :root {
 	--bs-blue: #1e30f3;
 	--bs-indigo: #6610f2;
@@ -1962,9 +2197,12 @@ progress {
 	font-weight: 400;
 	line-height: 1.5;
 	color: #212529;
-	background-color: #fff;
+/* 	background-color: #fff; */
+	background-color: #fafafa;
+    box-shadow: inset 0 1px 3px 0 rgba(0,0,0,.08);
 	background-clip: padding-box;
-	border: 1px solid #ced4da;
+	border: none;
+/* 	border: 1px solid #ced4da; */
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	appearance: none;
@@ -12088,6 +12326,7 @@ body, html {
 }
 
 .bg-gradient-primary-to-secondary { /* 버튼 그라데이션 */
+	margin: 0 0.2rem;
 	background: #1e30f3;
 	background: -webkit-linear-gradient(315deg, #55CA88 0%, #5BB318 100%);
 	/*   background: linear-gradient(135deg, #1e30f3 0%, #e21e80 100%); */
@@ -12095,6 +12334,13 @@ body, html {
 
 .text-gradient { /* 텍스트 그라데이션 */
 	background: -webkit-linear-gradient(135deg, #55CA88 0%, #412fe7 100%);
+	/* background: -webkit-linear-gradient(315deg, #1e30f3 0%, #e21e80 100%); */
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+.text-gradientOppo { /* 텍스트 그라데이션 */
+	background: -webkit-linear-gradient(135deg, #412fe7 0%, #55CA88  100%);
 	/* background: -webkit-linear-gradient(315deg, #1e30f3 0%, #e21e80 100%); */
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
