@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.go.mapper.LogInMapper">
+
+<!-- findById 쿼리문 -->
+<!-- <select id="findById" parameterType="long" resultType="com.go.model.MemberListVO"> -->
+<!--     SELECT * FROM crudmem WHERE id = #{id} -->
+<!-- </select> -->
+
+<!-- findByName 쿼리문 -->
+<select id="findByName" parameterType="String" resultType="com.go.model.MemberListVO">
+    SELECT * FROM crudmem WHERE name = #{name}
+</select>
+
+<select id="findByPassword" parameterType="String" resultType="com.go.model.MemberListVO">
+    SELECT * FROM crudmem WHERE password = #{password}
+</select>
+
+<insert id="join">
+insert into crudmem values(#{id}, #{password}, #{name})
+</insert>
+
+<select id="login" resultType="com.go.model.LogInVO">
+select * from crudmem where id=#{id} and password=#{password}
+</select>
+
+<select id="list" resultType="com.go.model.LogInVO">
+select * from crudmem
+</select>
+
+<delete id="dele">
+delete from crudmem where id=#{id}
+</delete>
+
+<select id="joinTable" resultType="com.go.model.CrudtestVO">
+select c.id,name,type,birth
+from crudmem c
+join testtb t
+on c.id=t.id
+where type=2
+</select>
+
+<!-- select 쿼리 -->
+<select id="joinTableMap" resultMap="joinTableResultMap">
+    select c.id, name, type, birth
+    from crudmem c
+    join testtb t
+    on c.id = t.id
+</select>
+
+<!-- resultmap -->
+<resultMap type="com.go.model.LogInVO" id="joinTableResultMap">
+    <id column="id" property="id" />
+    <result column="name" property="name" />
+    <collection property="testList" ofType="com.go.model.TestVO">
+        <result column="type" property="type" />
+        <result column="birth" property="birth" />
+    </collection>
+</resultMap>
+
+
+<!-- select 쿼리 -->
+<!-- <select id="joinTableMap" resultMap="joinTableResultMap"> -->
+<!--     select c.id, name, type, birth -->
+<!--     from crudmem c -->
+<!--     join testtb t -->
+<!--     on c.id = t.id -->
+<!-- </select> -->
+<!-- resultmap -->
+<!-- <resultMap id="joinTableResultMap" type="com.go.model.LogInVO"> -->
+<!--     <id column="id" property="id"/> -->
+<!--     <result column="name" property="name"/> -->
+<!--     <association property="com.go.model.TestVO" resultMap="testVOResultMap"/> -->
+<!-- </resultMap> -->
+
+<!-- <resultMap id="testVOResultMap" type="com.go.model.TestVO"> -->
+<!--     <result column="type" property="type"/> -->
+<!--     <result column="birth" property="birth"/> -->
+<!-- </resultMap> -->
+
+
+
+
+</mapper>
